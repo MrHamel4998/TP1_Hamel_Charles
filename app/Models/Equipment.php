@@ -2,14 +2,16 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Equipment extends Model
 {
+    use HasFactory;
     protected $fillable = [
         "name",
         "description",
-        "dailyPrice"
+        "daily_price"
     ];
 
     public function category() {
@@ -21,7 +23,7 @@ class Equipment extends Model
     }
 
     public function sports() {
-        return $this->belongsToMany(Sport::class, 'equipmentsports');
+        return $this->belongsToMany(Sport::class, 'equipment_sports');
     }
 
 }

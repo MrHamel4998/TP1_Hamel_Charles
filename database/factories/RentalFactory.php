@@ -14,11 +14,11 @@ class RentalFactory extends Factory
     public function definition(): array
     {
         return [
-            'startDate'   => $this->fake()->date,
-            'endDate'     => $this->fake()->date,
-            'totalPrice'  => $this->fake()->randomFloat(2, 20, 500),
-            'userId'      => User::inRandomOrder('id')->first()->id,
-            'equipmentId' => Equipment::inRandomOrder('id')->first()->id,
+            'startDate' => fake()->date,
+            'endDate' => fake()->date,
+            'totalPrice' => fake()->randomFloat(2, 20, 500),
+            'user_id' => User::inRandomOrder('id')->first()->id,
+            'equipment_id' => Equipment::inRandomOrder('id')->first()->id,
         ];
     }
 }

@@ -14,10 +14,10 @@ class UserFactory extends Factory
     public function definition(): array
     {
         return [
-            'firstName' => $this->fake()->firstName(),
-            'lastName'  => $this->fake()->lastName(),
-            'email'     => $this->fake()->unique()->email(),
-            'phone'     => $this->fake()->phoneNumber(),
+            'firstName' => fake()->firstName(),
+            'lastName' => fake()->lastName(),
+            'email' => fake()->unique()->email(),
+            'phone' => fake()->phoneNumber(),
         ];
     }
 }

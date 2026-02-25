@@ -15,10 +15,10 @@ return new class extends Migration
             $table->id();
             $table->string('name', 50);
             $table->text('description');
-            $table->decimal('dailyPrice', 10);
+            $table->decimal('daily_price', 10);
 
-            $table->unsignedInteger('categoryId');
-            $table->foreign('categoryId')->references('id')->on('categories');
+            $table->unsignedInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories');
             
             $table->timestamps();
         });

@@ -17,11 +17,11 @@ return new class extends Migration
             $table->date('endDate');
             $table->decimal('totalPrice', 10);
 
-            $table->unsignedBigInteger('userId');
-            $table->foreign('userId')->references('id')->on('users');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users');
 
-            $table->unsignedBigInteger('equipmentId');
-            $table->foreign('equipmentId')->references('id')->on('equipment');
+            $table->unsignedBigInteger('equipment_id');
+            $table->foreign('equipment_id')->references('id')->on('equipment');
 
             $table->timestamps();
         });

@@ -14,10 +14,10 @@ class ReviewFactory extends Factory
     public function definition(): array
     {
         return [
-            'rating'   => $this->fake()->numberBetween(1, 5),
-            'comment'  => $this->fake()->paragraph(),
-            'userId'   => User::inRandomOrder('id')->first()->id,
-            'rentalId' => Rental::inRandomOrder('id')->first()->id,
+            'rating' => fake()->numberBetween(1, 5),
+            'comment' => fake()->paragraph(),
+            'user_id' => User::inRandomOrder('id')->first()->id,
+            'rental_id' => Rental::inRandomOrder('id')->first()->id,
         ];
     }
 }

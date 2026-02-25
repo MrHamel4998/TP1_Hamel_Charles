@@ -1,4 +1,4 @@
-INSERT INTO equipmentsports (equipment_id, sport_id, created_at, updated_at) VALUES
+INSERT INTO equipment_sports (equipment_id, sport_id, created_at, updated_at) VALUES
 (1, 1, DATETIME('now'), DATETIME('now')), -- Vélo de montagne → Vélo
 (1, 5, DATETIME('now'), DATETIME('now')), -- Vélo de montagne → Randonnée
 (2, 1, DATETIME('now'), DATETIME('now')), -- Casque → Vélo
