@@ -2,7 +2,12 @@
 
 namespace Database\Seeders;
 
+
 use App\Models\User;
+use App\Models\Rental;
+use App\Models\Review;
+use App\Models\Sport;
+use App\Models\Equipment;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -15,11 +20,26 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        $this->call([
+            SportSeeder::class,
+            CategorySeeder::class,
+            EquipmentSeeder::class,
+            EquipmentSportSeeder::class,
         ]);
+
+        User::factory(20)->create();
+        Rental::factory(30)->create();
+        Review::factory(50)->create();
+
+        $sports = Sport::all();
+        $equipments = Equipment::all();
+
+        //https://laravel.com/docs/master/eloquent-relationships#updating-many-to-many-relationships
+        foreach ($sports as $sport) {
+            $sport->equipment()->sync(
+                $equipments->random(2)->pluck('id')->toArray()
+            );
+        }
+        
     }
 }
