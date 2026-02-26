@@ -14,9 +14,9 @@ class RentalFactory extends Factory
     public function definition(): array
     {
         return [
-            'startDate' => fake()->date,
-            'endDate' => fake()->date,
-            'totalPrice' => fake()->randomFloat(2, 20, 500),
+            'start_date' => fake()->date,
+            'end_date' => fake()->date,
+            'total_price' => fake()->randomFloat(2, 20, 500),
             'user_id' => User::inRandomOrder('id')->first()->id,
             // https://www.w3tutorials.net/blog/in-laravel-how-do-i-retrieve-a-random-user-id-from-the-users-table-for-model-factory-seeding-data-generation/#method-1-using-inrandomorder-and-first
             'equipment_id' => Equipment::inRandomOrder('id')->first()->id,

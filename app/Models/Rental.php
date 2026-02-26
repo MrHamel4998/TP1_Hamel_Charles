@@ -9,9 +9,9 @@ class Rental extends Model
 {
     use HasFactory;
     protected $fillable = [
-        "startDate",
-        "endDate",
-        "totalPrice"
+        "start_date",
+        "end_date",
+        "total_price"
     ];
 
     public function user(){

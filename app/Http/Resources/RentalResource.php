@@ -16,9 +16,9 @@ class RentalResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'startDate' => $this->startDate,
-            'endDate' => $this->endDate,
-            'totalPrice' => $this->totalPrice,
+            'start_date' => $this->start_date,
+            'end_date' => $this->end_date,
+            'total_price' => $this->total_price,
             'user_id' => $this->user_id,
             'equipment_id' => $this->equipment_id,
         ];
