@@ -17,7 +17,7 @@ return new class extends Migration
             $table->text('description');
             $table->decimal('daily_price', 10);
 
-            $table->unsignedInteger('category_id');
+            $table->unsignedBigInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories');
             
             $table->timestamps();

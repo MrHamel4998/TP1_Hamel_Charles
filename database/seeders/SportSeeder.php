@@ -13,7 +13,7 @@ class SportSeeder extends Seeder
      */
     public function run(): void
     {
-        $sql = file_get_contents(database_path().'\sql\sports.sql');
+        $sql = file_get_contents(database_path('\sql\sports.sql'));
         DB::statement($sql); 
     }
 }

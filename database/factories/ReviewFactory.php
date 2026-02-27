@@ -16,9 +16,9 @@ class ReviewFactory extends Factory
         return [
             'rating' => fake()->numberBetween(1, 5),
             'comment' => fake()->paragraph(),
-            'user_id' => User::inRandomOrder('id')->first()->id,
+            'user_id' => User::inRandomOrder()->first()->id,
             // https://www.w3tutorials.net/blog/in-laravel-how-do-i-retrieve-a-random-user-id-from-the-users-table-for-model-factory-seeding-data-generation/#method-1-using-inrandomorder-and-first
-            'rental_id' => Rental::inRandomOrder('id')->first()->id,
+            'rental_id' => Rental::inRandomOrder()->first()->id,
         ];
     }
 }
