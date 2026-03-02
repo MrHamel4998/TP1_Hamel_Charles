@@ -35,6 +35,7 @@ class UserController extends Controller
         } catch (QueryException $ex) {
             abort (422, 'UserController/Cannot be updated in database');
         } catch (Exception $ex) {
-            abort (500, 'UserController/Server error');        }
+            abort (500, 'UserController/Server error');        
+        }
     }
 }
