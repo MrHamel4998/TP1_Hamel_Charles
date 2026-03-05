@@ -3,9 +3,18 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class StoreUserRequest extends FormRequest
 {
+    protected function prepareForValidation(): void
+    {
+        $this->merge([
+            'firstName' => $this->input('firstName', $this->input('first_name')),
+            'lastName' => $this->input('lastName', $this->input('last_name')),
+        ]);
+    }
+
     /**
      * Determine if the user is authorized to make this request.
      */
@@ -21,11 +30,13 @@ class StoreUserRequest extends FormRequest
      */
     public function rules(): array
     {
+        $userId = $this->route('id');
+
         return [
-            'first_name' => 'required|string|max:50',
-            'last_name' => 'required|string|max:50',
-            'email' => 'required|string|max:50',
-            'password' => 'required|string|max:12|',
+            'firstName' => ['required', 'string', 'max:50'],
+            'lastName' => ['required', 'string', 'max:50'],
+            'email' => ['required', 'email', 'max:50', Rule::unique('users', 'email')->ignore($userId)],
+            'phone' => ['required', 'string', 'max:12'],
         ];
     }
 }

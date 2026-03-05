@@ -15,7 +15,7 @@ class EquipmentController extends Controller
     {
         try {
             return EquipmentResource::collection(
-            Equipment::paginate()
+            Equipment::all()
             )->response()->setStatusCode(200);
         } catch (Exception $ex) {
             abort (500, 'EquipmentController/Server Error');

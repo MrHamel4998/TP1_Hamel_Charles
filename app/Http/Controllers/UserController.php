@@ -5,10 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Resources\UserResource;
-use Dotenv\Exception\ValidationException;
 use Exception;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Illuminate\Database\QueryException;
-use Illuminate\Http\Request;
+use Illuminate\Validation\ValidationException;
 
 class UserController extends Controller
 {
@@ -27,9 +27,13 @@ class UserController extends Controller
     public function update(StoreUserRequest $request, string $id)
     {
         try {
-            $request = $request->validated();
+            $validated = $request->validated();
             $user = User::findOrFail($id);
-            return (new UserResource($user->update($request->all())))->response()->setStatusCode(200);
+            $user->update($validated);
+
+            return (new UserResource($user->fresh()))->response()->setStatusCode(200);
+        } catch (ModelNotFoundException $ex) {
+            abort(404, 'UserController/ID Not Found');
         } catch (ValidationException $ex) {
             abort (422, 'UserController/Failed validation');
         } catch (QueryException $ex) {
