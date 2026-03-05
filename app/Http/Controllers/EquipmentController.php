@@ -61,7 +61,7 @@ public function calculatePopularity($id)
 // Prompt : Comment on fait pour savoir si une date à un format valide en php
 // ChatGPT : Pour transformer une chaîne de caractères représentant une date en valeur exploitable en PHP, on utilise strtotime(). 
 //           strtotime() sert à convertir une date texte en timestamp, si la conversion échoue, il retourne false..
-    public function calculateAverage(Request $request, $id) {
+    public function calculateAverageRentalPrice(Request $request, $id) {
         try 
         {
             $minDate = $request->query('minDate');
@@ -75,7 +75,7 @@ public function calculatePopularity($id)
                 return response()->json(['message' => 'Format maxDate invalide'], 422);
             }
 
-            if ($minDate && $maxDate && $minDate > $maxDate) {
+            if ($minDate && $maxDate && strtotime($minDate) > strtotime($maxDate)) {
                 return response()->json([
                     'message' => 'minDate doit être inférieur à maxDate.'
                 ], 422);
@@ -91,9 +91,10 @@ public function calculatePopularity($id)
                 $query->whereDate('end_date', '<=', $maxDate);
             }
 
-            $rentals = $query->paginate(20);
-
-            return response()->json($rentals, 200);
+            $average = $query->avg('total_price');
+            return response()->json([
+                'average_total_price' => $average ?? 0
+            ], 200);
 
         } catch (ModelNotFoundException $ex) {
             abort(404, 'EquipmentController/ID Not Found');
