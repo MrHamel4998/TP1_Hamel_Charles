@@ -13,7 +13,7 @@ class CategorySeeder extends Seeder
      */
     public function run(): void
     {
-        $sql = file_get_contents(database_path().'\sql\categories.sql');
+        $sql = file_get_contents(database_path('\sql\categories.sql'));
         DB::statement($sql); 
     }
 }

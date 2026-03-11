@@ -8,12 +8,10 @@ use App\Models\Rental;
 use App\Models\Review;
 use App\Models\Sport;
 use App\Models\Equipment;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
 
     /**
      * Seed the application's database.
@@ -36,7 +34,7 @@ class DatabaseSeeder extends Seeder
 
         //https://laravel.com/docs/master/eloquent-relationships#updating-many-to-many-relationships
         foreach ($sports as $sport) {
-            $sport->equipment()->sync(
+            $sport->equipment()->syncWithoutDetaching(
                 $equipments->random(2)->pluck('id')->toArray()
             );
         }
