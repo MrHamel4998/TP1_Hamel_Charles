@@ -6,6 +6,7 @@ return [
         'default' => [
             'api' => [
                 'title' => 'L5 Swagger UI',
+                'generate_always' => env('L5_SWAGGER_GENERATE_ALWAYS', true),
             ],
 
             'routes' => [
