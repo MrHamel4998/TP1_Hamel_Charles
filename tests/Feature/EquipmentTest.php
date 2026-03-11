@@ -17,7 +17,7 @@ class EquipmentTest extends TestCase
 
         $equipments = Equipment::all();
 
-        $response = $this->get('/api/equipment');
+        $response = $this->get('/api/equipments');
         $response->assertStatus(200);
         $response->assertJsonCount(5, 'data');
         
@@ -26,5 +26,35 @@ class EquipmentTest extends TestCase
                 'name' => $equipments[$i]->name
             ]);
         }
+    }
+
+    public function test_get_single_equipment()
+    {
+        $this->seed();
+
+        $equipment = Equipment::first();
+
+        $response = $this->get('/api/equipments/'.$equipment->id);
+
+        $response->assertStatus(200);
+        $response->assertJsonFragment(['name' => $equipment->name]);
+    }
+
+    public function test_get_equipment_not_found()
+    {
+        $this->seed();
+
+        $response = $this->get('/api/equipments/9999');
+        $response->assertStatus(404);
+    }
+
+    public function test_get_equipment_popularity()
+    {
+        $this->seed();
+
+        $equipment = Equipment::first();
+
+        $response = $this->get('/api/equipments/'.$equipment->id.'/popularity');
+        $response->assertStatus(200);
     }
 }
