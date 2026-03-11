@@ -1,0 +1,275 @@
+{
+  "info": {
+    "_postman_id": "408b225d-d2cf-4c8a-874e-96172dd3871f",
+    "name": "TP01",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "51152263",
+    "_collection_link": "https://go.postman.co/collection/51152263-408b225d-d2cf-4c8a-874e-96172dd3871f?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Requête 1",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/equipment",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "equipment"
+          ]
+        }
+      },
+      "response": [
+        {
+          "data": [
+            {
+              "id": 1,
+              "name": "Vélo de montagne",
+              "description": "Vélo tout-terrain",
+              "daily_price": 35,
+              "categoryId": null
+            },
+            {
+              "id": 2,
+              "name": "Casque de vélo",
+              "description": "Casque de protection homologué",
+              "daily_price": 5,
+              "categoryId": null
+            },
+            {
+              "id": 3,
+              "name": "Skis alpins",
+              "description": "Skis pour piste",
+              "daily_price": 40,
+              "categoryId": null
+            },
+            {
+              "id": 4,
+              "name": "Raquettes de tennis",
+              "description": "Raquette en graphite",
+              "daily_price": 12,
+              "categoryId": null
+            },
+            {
+              "id": 5,
+              "name": "Sac de randonnée",
+              "description": "Sac 40L",
+              "daily_price": 8,
+              "categoryId": null
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Requête 2",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/equipment/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "equipment",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "data": {
+            "id": 1,
+            "name": "Vélo de montagne",
+            "description": "Vélo tout-terrain",
+            "daily_price": 35,
+            "categoryId": null
+          }
+        }
+      ]
+    },
+    {
+      "name": "Requête 3",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/equipment/1/popularity",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "equipment",
+            "1",
+            "popularity"
+          ]
+        }
+      },
+      "response": [
+        {
+          "popularity": 4.2
+        }
+      ]
+    },
+    {
+      "name": "Requête 4",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Lewis\",\r\n    \"lastName\": \"Hamilton\",\r\n    \"email\": \"LewisHam@f1.uk\",\r\n    \"phone\": \"33234567896\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users"
+          ]
+        }
+      },
+      "response": [
+        {
+          "data": {
+            "id": 21,
+            "first_name": "Lewis",
+            "last_name": "Hamilton",
+            "email": "LewisHam@f1.uk",
+            "phone": "33234567896"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Requête 5",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Charles\",\r\n    \"lastName\": \"Hamel\",\r\n    \"email\": \"2435281@csfoy.ca\",\r\n    \"phone\": \"11234567890\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/users/1",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "users",
+            "1"
+          ]
+        }
+      },
+      "response": [
+        {
+          "data": {
+            "id": 1,
+            "first_name": "Charles",
+            "last_name": "Hamel",
+            "email": "2435281@csfoy.ca",
+            "phone": "11234567890"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Requête 6",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/reviews/4",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "reviews",
+            "4"
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Requête 7",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://127.0.0.1:8000/api/equipment/1/average-rental-price",
+          "protocol": "http",
+          "host": [
+            "127",
+            "0",
+            "0",
+            "1"
+          ],
+          "port": "8000",
+          "path": [
+            "api",
+            "equipment",
+            "1",
+            "average-rental-price"
+          ]
+        }
+      },
+      "response": [
+        {
+          "average_total_price": 282.83428571428567
+        }
+      ]
+    }
+  ]
+}
