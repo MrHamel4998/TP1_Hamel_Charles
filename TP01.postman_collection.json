@@ -13,19 +13,11 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:8000/api/equipment",
+          "raw": "http://127.0.0.1:8000/api/equipments",
           "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1"
-          ],
+          "host": ["127", "0", "0", "1"],
           "port": "8000",
-          "path": [
-            "api",
-            "equipment"
-          ]
+          "path": ["api", "equipments"]
         }
       },
       "response": [
@@ -33,15 +25,15 @@
           "data": [
             {
               "id": 1,
-              "name": "Vélo de montagne",
-              "description": "Vélo tout-terrain",
+              "name": "V\u00e9lo de montagne",
+              "description": "V\u00e9lo tout-terrain",
               "daily_price": 35,
               "categoryId": null
             },
             {
               "id": 2,
-              "name": "Casque de vélo",
-              "description": "Casque de protection homologué",
+              "name": "Casque de v\u00e9lo",
+              "description": "Casque de protection homologu\u00e9",
               "daily_price": 5,
               "categoryId": null
             },
@@ -61,7 +53,7 @@
             },
             {
               "id": 5,
-              "name": "Sac de randonnée",
+              "name": "Sac de randonn\u00e9e",
               "description": "Sac 40L",
               "daily_price": 8,
               "categoryId": null
@@ -76,28 +68,19 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:8000/api/equipment/1",
+          "raw": "http://127.0.0.1:8000/api/equipments/1",
           "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1"
-          ],
+          "host": ["127", "0", "0", "1"],
           "port": "8000",
-          "path": [
-            "api",
-            "equipment",
-            "1"
-          ]
+          "path": ["api", "equipments", "1"]
         }
       },
       "response": [
         {
           "data": {
             "id": 1,
-            "name": "Vélo de montagne",
-            "description": "Vélo tout-terrain",
+            "name": "V\u00e9lo de montagne",
+            "description": "V\u00e9lo tout-terrain",
             "daily_price": 35,
             "categoryId": null
           }
@@ -110,28 +93,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:8000/api/equipment/1/popularity",
+          "raw": "http://127.0.0.1:8000/api/equipments/1/popularity",
           "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1"
-          ],
+          "host": ["127", "0", "0", "1"],
           "port": "8000",
-          "path": [
-            "api",
-            "equipment",
-            "1",
-            "popularity"
-          ]
+          "path": ["api", "equipments", "1", "popularity"]
         }
       },
-      "response": [
-        {
-          "popularity": 4.2
-        }
-      ]
+      "response": [{ "popularity": 5.3999999999999995 }]
     },
     {
       "name": "Requête 4",
@@ -150,17 +119,9 @@
         "url": {
           "raw": "http://127.0.0.1:8000/api/users",
           "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1"
-          ],
+          "host": ["127", "0", "0", "1"],
           "port": "8000",
-          "path": [
-            "api",
-            "users"
-          ]
+          "path": ["api", "users"]
         }
       },
       "response": [
@@ -182,7 +143,7 @@
         "header": [],
         "body": {
           "mode": "raw",
-          "raw": "{\r\n    \"firstName\": \"Charles\",\r\n    \"lastName\": \"Hamel\",\r\n    \"email\": \"2435281@csfoy.ca\",\r\n    \"phone\": \"11234567890\"\r\n}",
+          "raw": "{\r\n    \"first_name\": \"Charles\",\r\n    \"last_name\": \"Hamel\",\r\n    \"email\": \"2435281@csfoy.ca\",\r\n    \"phone\": \"11234567890\"\r\n}",
           "options": {
             "raw": {
               "language": "json"
@@ -192,18 +153,9 @@
         "url": {
           "raw": "http://127.0.0.1:8000/api/users/1",
           "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1"
-          ],
+          "host": ["127", "0", "0", "1"],
           "port": "8000",
-          "path": [
-            "api",
-            "users",
-            "1"
-          ]
+          "path": ["api", "users", "1"]
         }
       },
       "response": [
@@ -213,7 +165,7 @@
             "first_name": "Charles",
             "last_name": "Hamel",
             "email": "2435281@csfoy.ca",
-            "phone": "11234567890"
+            "phone": "819-999-8765"
           }
         }
       ]
@@ -226,18 +178,9 @@
         "url": {
           "raw": "http://127.0.0.1:8000/api/reviews/4",
           "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1"
-          ],
+          "host": ["127", "0", "0", "1"],
           "port": "8000",
-          "path": [
-            "api",
-            "reviews",
-            "4"
-          ]
+          "path": ["api", "reviews", "4"]
         }
       },
       "response": []
@@ -248,28 +191,14 @@
         "method": "GET",
         "header": [],
         "url": {
-          "raw": "http://127.0.0.1:8000/api/equipment/1/average-rental-price",
+          "raw": "http://127.0.0.1:8000/api/equipments/1/average-rental-price",
           "protocol": "http",
-          "host": [
-            "127",
-            "0",
-            "0",
-            "1"
-          ],
+          "host": ["127", "0", "0", "1"],
           "port": "8000",
-          "path": [
-            "api",
-            "equipment",
-            "1",
-            "average-rental-price"
-          ]
+          "path": ["api", "equipments", "1", "average-rental-price"]
         }
       },
-      "response": [
-        {
-          "average_total_price": 282.83428571428567
-        }
-      ]
+      "response": [{ "average_total_price": 244.43400000000003 }]
     }
   ]
 }
